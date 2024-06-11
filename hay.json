@@ -1,0 +1,32 @@
+{
+  "words": [
+    {
+      "text": "You.",
+      "start": 330,
+      "end": 880,
+      "confidence": 0.62,
+      "speaker": "A"
+    },
+    {
+      "text": "The",
+      "start": 1730,
+      "end": 2190,
+      "confidence": 0.98,
+      "speaker": "A"
+    },
+    {
+      "text": "Example",
+      "start": 330,
+      "end": 880,
+      "confidence": 0.75,
+      "speaker": "B"
+    },
+    {
+      "text": "Word",
+      "start": 1000,
+      "end": 1500,
+      "confidence": 0.85,
+      "speaker": "A"
+    }
+  ]
+}

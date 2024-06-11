@@ -1,34 +1,25 @@
-d3.json("data.json")
+d3.json("hayley.json")
   .then((jsonData) => {
-    // Function to extract words from a specific key
-    function extractWordsFromKey(obj, key) {
-      let words = [];
-      function recurse(obj) {
-        if (typeof obj === "object") {
-          for (const k in obj) {
-            if (k === key) {
-              words.push(...obj[k].split(/\W+/));
-            }
-            recurse(obj[k]);
-          }
-        }
-      }
-      recurse(obj);
-      return words;
-    }
+    // Extract words from the JSON dataset
+    const words = jsonData.words
+      .map((word) =>
+        word.text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").toLowerCase()
+      )
+      .filter(Boolean);
 
-    const words = extractWordsFromKey(jsonData, "title").filter(Boolean);
-    const wordCounts = {};
+    // Count word occurrences
+    const wordCounts = words.reduce((counts, word) => {
+      counts[word] = (counts[word] || 0) + 1;
+      return counts;
+    }, {});
 
-    words.forEach((word) => {
-      wordCounts[word] = (wordCounts[word] || 0) + 1;
-    });
-
+    // Prepare data for word cloud
     const wordData = Object.keys(wordCounts).map((word) => ({
       text: word,
-      size: wordCounts[word] * 10,
+      size: wordCounts[word] * 3,
     }));
 
+    // Set up the word cloud layout
     const svg = d3.select("svg"),
       width = +svg.attr("width"),
       height = +svg.attr("height");
@@ -38,12 +29,13 @@ d3.json("data.json")
       .size([width, height])
       .words(wordData)
       .padding(5)
-      .rotate(() => Math.random() * 90)
+      .rotate(() => ~~(Math.random() * 2) * 90)
       .fontSize((d) => d.size)
       .on("end", draw);
 
     layout.start();
 
+    // Draw the word cloud
     function draw(words) {
       svg
         .append("g")
