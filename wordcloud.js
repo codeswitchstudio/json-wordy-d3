@@ -38,7 +38,7 @@ d3.json("data.json")
       .size([width, height])
       .words(wordData)
       .padding(5)
-      .rotate(() => Math.random() * 90)
+      .rotate(() => Math.random() * 45)
       .fontSize((d) => d.size)
       .on("end", draw);
 

@@ -1,4 +1,6 @@
+//Load JSON data from 'data.json'
 d3.json("hayley.json")
+
   .then((jsonData) => {
     // Extract words from the JSON dataset
     const words = jsonData.words
@@ -45,7 +47,7 @@ d3.json("hayley.json")
         .enter()
         .append("text")
         .style("font-size", (d) => `${d.size}px`)
-        .style("font-family", "Impact")
+        .style("font-family", "Roboto")
         .style("fill", (d, i) => d3.schemeCategory10[i % 10])
         .attr("text-anchor", "middle")
         .attr("transform", (d) => `translate(${d.x},${d.y})rotate(${d.rotate})`)

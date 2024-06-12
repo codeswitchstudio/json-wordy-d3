@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+text.word-cloud {
+  font-family: "Roboto, Arial", sans-serif;
+}
+
+/* Define a set of colors for the word cloud */
+.color0 {
+  fill: #1f77b4;
+}
+.color1 {
+  fill: #ff7f0e;
+}
+.color2 {
+  fill: #2ca02c;
+}
+.color3 {
+  fill: #d62728;
+}
+.color4 {
+  fill: #9467bd;
+}
+.color5 {
+  fill: #8c564b;
+}
+.color6 {
+  fill: #e377c2;
+}
+.color7 {
+  fill: #7f7f7f;
+}
+.color8 {
+  fill: #bcbd22;
+}
+.color9 {
+  fill: #17becf;
+}
