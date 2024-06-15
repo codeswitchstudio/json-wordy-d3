@@ -1,9 +1,21 @@
-body {
+/* body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
+} */
+body {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; */
+  margin: 10;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+svg {
+  border-style: dashed;
 }
 
 text.word-cloud {
